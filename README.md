@@ -1,10 +1,10 @@
 ## Endpoints.
 
-* agenda => calendario.
-* los jugadores => caracteristicas y weas.
-* generador de match => skills
-* registro de usuario => login, registro, login con google y facenbook.
-* vista de usuario => perfil del usuario.
+- agenda => calendario.
+- los jugadores => caracteristicas y weas.
+- generador de match => skills
+- registro de usuario => login, registro, login con google y facenbook.
+- vista de usuario => perfil del usuario.
 
 ```
 GET /jugadores
@@ -74,7 +74,7 @@ PATCH /jugador/ 203
     }
 }
 
-DELETE /jugador/:id 
+DELETE /jugador/:id
 
 GET /matches 200
 
@@ -126,7 +126,7 @@ POST /register 201
     }
 }
 
-POST /login 
+POST /login
 
 {
     user: {
@@ -172,6 +172,18 @@ GET /user/:id 200
 
 ## Extras.
 
-* definir middleware para determinar rutas publicas y privadas y autenticacion.
-* validaciones de esquemas de objeto para retornar `422`.
-* testeo con jest.
+- definir middleware para determinar rutas publicas y privadas y autenticacion.
+- validaciones de esquemas de objeto para retornar `422`.
+- testeo con jest.
+
+### Instrucciones.
+
+Una vez clonado el repo hacer
+
+- `npm i`
+- `npm run d-build` hace el build del proyecto.
+- `npm run up` levanta los contenedores en detached mode.
+- `npm run bash` permite ingresar al contenedor del servidor.
+- `npm run logs` permite ver los logs del contenedor.
+
+Profit
