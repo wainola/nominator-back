@@ -1,0 +1,23 @@
+version: "3"
+services:
+  postgres:
+    image: postgres
+    environment:
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=nominator
+  nominator:
+    container_name: nominator
+    depends_on:
+      - postgres
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    command: 'npm run dev'
+    ports:
+      - '9000:9000'
+    volumes:
+      - ./:/usr/server
+    environment:
+      - DATABASE_URL=postgres://postgres:password@postgres/nominator
