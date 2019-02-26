@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
+<<<<<<< HEAD
 const { Pool } = require('pg');
 const DatabaseServices = require('./services/database');
 
@@ -21,6 +22,9 @@ const { DATABASE_URL } = process.env;
 >>>>>>> user test, handler, model and test
 =======
 >>>>>>> adding database middleware to server
+=======
+const Database = require('./services/database');
+>>>>>>> using singleton to connect to the database
 
 const router = require('./routes/index');
 
@@ -28,12 +32,24 @@ const app = express();
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> adding database middleware to server
+=======
+// JUST FOR TESTING THE DATABASE SERVICES
+Database.connect()
+  .then(() => console.log('Connected!'))
+  .catch(e => console.log(e));
+
+Database.testConnection()
+  .then(d => console.log(d))
+  .catch(e => console.log(e));
+
+>>>>>>> using singleton to connect to the database
 // SETTING UP DATABASESERVICES AS A MIDDLEWARE
 app.use((request, response, next) => {
   const req = request;
-  req.database = new DatabaseServices();
+  req.database = Database;
   return next();
 <<<<<<< HEAD
 =======
