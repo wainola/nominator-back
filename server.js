@@ -4,21 +4,36 @@ const bodyParser = require('body-parser');
 const { Pool } = require('pg');
 const DatabaseServices = require('./services/database');
 
+<<<<<<< HEAD
 // JUST FOR TESTING THE DATABASE SERVICES
 // new DatabaseServices()
 //   .testConnection()
 //   .then(d => console.log(d))
 //   .catch(e => console.log(e));
+=======
+const router = require('./routes/index');
+
+const { DATABASE_URL } = process.env;
+>>>>>>> user test, handler, model and test
 
 const router = require('./routes/index');
 
 const app = express();
 
+<<<<<<< HEAD
 // SETTING UP DATABASESERVICES AS A MIDDLEWARE
 app.use((request, response, next) => {
   const req = request;
   req.database = new DatabaseServices();
   return next();
+=======
+app.use(router);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+const pool = new Pool({
+  connectionString: DATABASE_URL
+>>>>>>> user test, handler, model and test
 });
 
 app.use(router);
