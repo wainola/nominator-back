@@ -5,7 +5,7 @@ const registrationSchema = Joi.object().keys({
     name: Joi.string().required(),
     lastname: Joi.string().required(),
     email: Joi.string().required(),
-    password: Joi.string().require()
+    password: Joi.string().required()
   })
 });
 
