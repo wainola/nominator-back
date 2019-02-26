@@ -2,33 +2,41 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const { Pool } = require('pg');
+const DatabaseServices = require('./services/database');
+
+// JUST FOR TESTING THE DATABASE SERVICES
+// new DatabaseServices()
+//   .testConnection()
+//   .then(d => console.log(d))
+//   .catch(e => console.log(e));
 
 const router = require('./routes/index');
 
-const { DATABASE_URL } = process.env;
-
-console.log(process.env.DATABASE_URL);
-
 const app = express();
+
+// SETTING UP DATABASESERVICES AS A MIDDLEWARE
+app.use((request, response, next) => {
+  const req = request;
+  req.database = new DatabaseServices();
+  return next();
+});
 
 app.use(router);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const pool = new Pool({
-  connectionString: DATABASE_URL
-});
-
-pool.connect();
-
-pool.query('SELECT NOW()', async (err, result) => {
-  if (err) console.log('Error::', err);
-  const rows = await result.rows;
-  console.log('ROWS::', rows);
-});
-
 app.get('/test', async (request, response) => {
   return response.status(200).send({ msg: "I' alive!" });
+});
+
+app.get('/testDB', async (request, response) => {
+  try {
+    const d = request.database;
+    const q = await d.testConnection();
+    return response.status(200).send({ data: { ...q[0] } });
+  } catch (e) {
+    return response.status(500).send({ error: e });
+  }
 });
 
 app.listen(9000, err => {
