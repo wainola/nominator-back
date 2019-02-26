@@ -5,32 +5,47 @@ const { Pool } = require('pg');
 const DatabaseServices = require('./services/database');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> adding database middleware to server
 // JUST FOR TESTING THE DATABASE SERVICES
 // new DatabaseServices()
 //   .testConnection()
 //   .then(d => console.log(d))
 //   .catch(e => console.log(e));
+<<<<<<< HEAD
 =======
 const router = require('./routes/index');
 
 const { DATABASE_URL } = process.env;
 >>>>>>> user test, handler, model and test
+=======
+>>>>>>> adding database middleware to server
 
 const router = require('./routes/index');
 
 const app = express();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> adding database middleware to server
 // SETTING UP DATABASESERVICES AS A MIDDLEWARE
 app.use((request, response, next) => {
   const req = request;
   req.database = new DatabaseServices();
   return next();
+<<<<<<< HEAD
 =======
+=======
+});
+
+>>>>>>> adding database middleware to server
 app.use(router);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+<<<<<<< HEAD
 const pool = new Pool({
   connectionString: DATABASE_URL
 >>>>>>> user test, handler, model and test
@@ -40,6 +55,8 @@ app.use(router);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+=======
+>>>>>>> adding database middleware to server
 app.get('/test', async (request, response) => {
   return response.status(200).send({ msg: "I' alive!" });
 });
