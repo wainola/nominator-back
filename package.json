@@ -4,18 +4,7 @@
   "description": "- agenda => calendario. - los jugadores => caracteristicas y weas. - generador de match => skills - registro de usuario => login, registro, login con google y facenbook. - vista de usuario => perfil del usuario.",
   "main": "index.js",
   "scripts": {
-<<<<<<< HEAD
     "test": "echo \"Error: no test specified\" && exit 1"
-=======
-    "dev": "nodemon server.js",
-    "up": "docker-compose up -d",
-    "d-build": "docker-compose build",
-    "down": "docker-compose down",
-    "bash": "docker exec -it nominator bash",
-    "test": "jest --watchAll",
-    "logs": "docker-compose logs f",
-    "db": "docker exec -it nominator-back_postgres_1 psql -U postgres -d nominator"
->>>>>>> WIP: UserHandler and UserModels
   },
   "repository": {
     "type": "git",
@@ -27,13 +16,6 @@
     "url": "https://github.com/wainola/nominator-back/issues"
   },
   "homepage": "https://github.com/wainola/nominator-back#readme",
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "dotenv": "^6.2.0",
-    "express": "^4.16.4",
-    "joi": "^14.3.1",
-    "pg": "^7.8.1"
-  },
   "devDependencies": {
     "eslint": "^5.3.0",
     "eslint-config-airbnb": "^17.1.0",
