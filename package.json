@@ -4,7 +4,14 @@
   "description": "- agenda => calendario. - los jugadores => caracteristicas y weas. - generador de match => skills - registro de usuario => login, registro, login con google y facenbook. - vista de usuario => perfil del usuario.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "docker-build": "docker-compose -f docker-compose.develop.yml build",
+    "docker-up": "docker-compose -f docker-compose.develop.yml up",
+    "docker-up-d": "docker-compose -f docker-compose.develop.yml up -d",
+    "docker-logs": "docker-compose -f docker-compose.develop.yml logs -f",
+    "up-server": "docker-compose -f docker-compose.develop.yml server up",
+    "up-client": "docker-compose -f docker-compose.develop.yml client up",
+    "server-logs": "docker-compose -f docker-compose.develop.yml logs -f server",
+    "client-logs": "docker-compose -f docker-compose.develop.yml logs -f client"
   },
   "repository": {
     "type": "git",
