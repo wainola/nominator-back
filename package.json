@@ -1,34 +1,21 @@
 {
-  "name": "nominator-back",
+  "name": "nominator",
   "version": "1.0.0",
-  "description": "* agenda => calendario. * los jugadores => caracteristicas y weas. * generador de match => skills * registro de usuario => login, registro, login con google y facenbook. * vista de usuario => perfil del usuario.",
+  "description": "- agenda => calendario. - los jugadores => caracteristicas y weas. - generador de match => skills - registro de usuario => login, registro, login con google y facenbook. - vista de usuario => perfil del usuario.",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server.js",
-    "up": "docker-compose up -d",
-    "d-build": "docker-compose build",
-    "down": "docker-compose down",
-    "bash": "docker exec -it nominator bash",
-    "test": "jest --watchAll",
-    "logs": "docker-compose logs f"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wainola/nominator-back.git"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/wainola/nominator-back/issues"
   },
   "homepage": "https://github.com/wainola/nominator-back#readme",
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "dotenv": "^6.2.0",
-    "express": "^4.16.4",
-    "pg": "^7.8.1"
-  },
   "devDependencies": {
     "eslint": "^5.3.0",
     "eslint-config-airbnb": "^17.1.0",
@@ -37,8 +24,6 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
-    "jest": "^24.1.0",
-    "nodemon": "^1.18.10",
     "prettier": "^1.16.4"
   }
 }
