@@ -8,8 +8,8 @@
     "docker-up": "docker-compose -f docker-compose.develop.yml up",
     "docker-up-d": "docker-compose -f docker-compose.develop.yml up -d",
     "docker-logs": "docker-compose -f docker-compose.develop.yml logs -f",
-    "up-server": "docker-compose -f docker-compose.develop.yml server up",
-    "up-client": "docker-compose -f docker-compose.develop.yml client up",
+    "up-server": "docker-compose -f docker-compose.develop.yml up server",
+    "up-client": "docker-compose -f docker-compose.develop.yml up client",
     "server-logs": "docker-compose -f docker-compose.develop.yml logs -f server",
     "client-logs": "docker-compose -f docker-compose.develop.yml logs -f client"
   },
