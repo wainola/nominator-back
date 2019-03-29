@@ -1,5 +1,5 @@
 const Joi = require('joi');
-const { registrationSchema } = require('../validators');
+const { playerSchema } = require('../validators');
 const Errors = require('../errors');
 
 const UserModel = require('../models/UserModel');
